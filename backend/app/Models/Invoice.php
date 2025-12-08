@@ -39,6 +39,10 @@ class Invoice extends Model
         return $this->hasMany(Payment::class);
     }
 
+    public function Debt(): HasMany
+    {
+        return $this->hasMany(Debt::class);
+    }
 
     public function Client(): BelongsTo
     {
