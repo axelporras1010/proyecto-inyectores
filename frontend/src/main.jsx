@@ -12,7 +12,5 @@ axios.defaults.baseURL = 'http://127.0.0.1:8001';
 axios.defaults.withCredentials = true;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <App />
-  </React.StrictMode>,
 );

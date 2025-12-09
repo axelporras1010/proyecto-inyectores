@@ -18,7 +18,7 @@ class Client extends Model
         "cedula"
     ];
 
-    public function Debt(): HasMany
+    public function debts(): HasMany
     {
         return $this->hasMany(Debt::class);
     }
