@@ -20,11 +20,15 @@ return Application::configure(basePath: dirname(__DIR__))
         // Configura los middleware específicos para la API o para todos los grupos
         $middleware->api(append: [
             EnsureFrontendRequestsAreStateful::class,
+            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+            \Illuminate\Http\Middleware\HandleCors::class,
         ]);
 
         // Si prefieres usarlo en el grupo 'web' para la autenticación SPA:
         $middleware->web(append: [
              EnsureFrontendRequestsAreStateful::class,
+            // \App\Http\Middleware\HandleInertiaRequests::class,
+            \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
