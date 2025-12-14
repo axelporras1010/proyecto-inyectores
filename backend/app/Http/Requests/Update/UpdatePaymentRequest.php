@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Update;
+
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePaymentRequest extends FormRequest
+class UpdatePaymentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,10 +25,11 @@ class StorePaymentRequest extends FormRequest
         return [
             'date' => ['date', 'required'],
             'amount' => ['numeric', 'required'],
-            'currency' => ['string', 'required', 'min:55'],
-            'reference' => ['numeric', 'required', 'min:0.01'],
-            'payment_method' => ['string', 'required', 'min:255'],
-            'description' => ['string', 'required', 'min:255'],
+            'currency' => ['string', 'required', 'min:3'],
+            'reference' => ['numeric', 'required', 'min:0'],
+            'payment_method' => ['string', 'required', 'max:255'],
+            'description' => ['string', 'required', 'max:255'],
+            'invoice_id' => ['required', 'integer', 'exists:invoices,id']
         ];
     }
 }

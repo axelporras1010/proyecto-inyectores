@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Update;
+
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,7 +12,7 @@ class UpdateDebtRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +24,7 @@ class UpdateDebtRequest extends FormRequest
     {
         return [
             'client_id' => ['required', 'exists:clients,id'],
-            'service_id' => ['required', 'exists:services,id'],
+            'invoice_id' => ['required', 'exists:invoices,id'],
             'pending_balance' => ['required', 'numeric', 'min:0']
         ];
     }

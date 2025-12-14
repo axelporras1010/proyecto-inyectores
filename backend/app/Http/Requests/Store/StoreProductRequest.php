@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Store;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreClientRequest extends FormRequest
+class StoreProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,9 +22,11 @@ class StoreClientRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:100'],
-            'phone' => ['required', 'string', 'max:100'],
-            'cedula' => ['required', 'string', 'max:100', 'unique:clients,cedula'],
+            'name' => ['string', 'required', "max:100"],
+            'description' => ['string', 'required', "max:500"],
+            'price' => ['numeric', 'required', 'min:0'],
+            'actual_stock' => ['numeric', 'required', 'min:0'],
+            'min_stock' => ['numeric', 'required', 'min:0']
         ];
     }
 }

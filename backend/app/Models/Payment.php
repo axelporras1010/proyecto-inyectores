@@ -17,7 +17,8 @@ class Payment extends Model
         "currency",
         "reference",
         "payment_method",
-        "description"
+        "description",
+        "invoice_id"
     ];
 
     public function Invoice(): BelongsTo
