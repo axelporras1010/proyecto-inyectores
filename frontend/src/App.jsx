@@ -7,11 +7,11 @@ import {
 import Login from "./pages/Auth/LoginPage";
 import MainLayout from "./layouts/MainLayout";
 import ProductsPage from "./pages/Inventory/ProductsPage";
+import ClientsPage from "./pages/Clients/ClientsPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 // Asegúrate de importar tus páginas (o crea archivos temporales si no existen)
 const DashboardPage = () => <div>Bienvenido al Dashboard</div>;
-const ClientsPage = () => <div>Gestión de Clientes</div>;
 // const ProductsPage = () => <div >Inventario de Productos</div>;
 
 function App() {
