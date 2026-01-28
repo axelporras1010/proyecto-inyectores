@@ -11,7 +11,7 @@ class UpdateRegisterCloseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class UpdateRegisterCloseRequest extends FormRequest
         return [
             'date' => ['required', 'date'],
             'COP_amount' => ['required', 'numeric', 'min:0'],
-            'USD_amount' => ['required', 'numeric', 'min:0']
+            'USD_amount' => ['required', 'numeric', 'min:0'],
+            'description' => ['nullable', 'string', 'max:1000']
         ];
     }
 }

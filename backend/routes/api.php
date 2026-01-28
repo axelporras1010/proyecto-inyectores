@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\DebtController;
 use App\Http\Controllers\Api\InvoiceController;
 use App\Http\Controllers\Api\PaymentController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\RegisterCloseController;
 use App\Http\Controllers\Api\ServiceController;
 
 /*
@@ -36,5 +37,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('payments', PaymentController::class);
     Route::apiResource('debt', DebtController::class);
     Route::apiResource('invoices', InvoiceController::class);
-
+    Route::apiResource('registerClose', RegisterCloseController::class);
 });

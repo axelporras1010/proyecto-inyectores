@@ -8,6 +8,7 @@ import {
   FileText,
   LogOut,
   UserCircle,
+  Calculator,
 } from "lucide-react";
 
 export default function MainLayout() {
@@ -29,6 +30,7 @@ export default function MainLayout() {
     { name: "Inventario", path: "/products", icon: <Package size={20} /> },
     { name: "Servicios", path: "/services", icon: <Wrench size={20} /> },
     { name: "Facturación", path: "/invoices", icon: <FileText size={20} /> },
+    { name: "Cierres de Caja", path: "/registerClose", icon: <Calculator size={20} /> },
   ];
 
   return (
